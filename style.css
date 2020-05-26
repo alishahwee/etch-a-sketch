@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Walter Turncoat', cursive;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+#grid-container {
+  width: 80%;
+  margin: auto;
+}
+
+.grid-square {
+  background-color: #ffffff;
+  float: left;
+  position: relative;
+  width: 5%;
+  padding-bottom: 5%;
+  margin: 0.5%;
+  overflow: hidden;
+}
