@@ -10,13 +10,13 @@
   <!--Naming convention follows the BEM methodology-->
   <body>
     <h1>Etch-A-Sketch</h1>
-    <div class="grid-form">
+    <form class="grid-form">
       <label class="grid-form__label">
-        Choose a grid size (1 - 100):
-        <input class="grid-form__number-input" type="number" name="grid" />
+        Choose a grid size:
+        <input class="grid-form__number-input" type="number" name="grid-size" min="1" max="100" placeholder="1 to 100" required />
       </label>
       <input class="grid-form__submit-button" type="submit" />
-    </div>
+    </form>
     <div class="grid"></div>
     <div class="sketch-menu">
       <ul class="sketch-menu__list">

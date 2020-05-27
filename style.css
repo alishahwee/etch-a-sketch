@@ -9,21 +9,30 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Walter Turncoat', cursive;
 }
 
 body {
   text-align: center;
   background-color: var(--background-color);
   overflow: hidden;
+  font-family: 'Walter Turncoat', cursive;
 }
 
 h1 {
   font-size: 40px;
 }
 
+button {
+  font-family: 'Walter Turncoat', cursive;
+}
+
 .grid-form {
   padding-bottom: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-form__number-input {
+  width: 4rem;
 }
 
 .grid-form__submit-button {
