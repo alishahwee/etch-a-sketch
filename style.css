@@ -4,7 +4,6 @@
   --background-color: #f1f1f1;
   --square-color: #ffffff;
   --square-border-color: #dddddd;
-  --default-mouseover-color: rgb(65, 65, 65);
 }
 
 * {
@@ -53,10 +52,6 @@ button {
   width: auto;
   background-color: var(--square-color);
   border: 1px solid var(--square-border-color);
-}
-
-.grid__square--default-mouseover-color {
-  background-color: var(--default-mouseover-color);
 }
 
 .sketch-menu__list {
