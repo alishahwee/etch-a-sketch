@@ -8,9 +8,12 @@
   --default-mouseover-color: rgb(65, 65, 65);
 }
 
-body {
+* {
   box-sizing: border-box;
   font-family: 'Walter Turncoat', cursive;
+}
+
+body {
   text-align: center;
   background-color: var(--background-color);
   overflow: hidden;
@@ -18,6 +21,16 @@ body {
 
 h1 {
   font-size: 40px;
+}
+
+.grid-form {
+  padding-bottom: 3px;
+}
+
+.grid-form__submit-button {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .grid {
@@ -38,7 +51,26 @@ h1 {
   background-color: var(--default-mouseover-color);
 }
 
+.sketch-menu__list {
+  padding: 0;
+}
+
+.sketch-menu__list__mode {
+  display: inline-block;
+  padding: 0.5rem 0.5rem;
+}
+
+.sketch-menu__list__mode__button {
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
 @media only screen and (max-width: 600px) {
+  * {
+    font-size: 12px;
+  }
+
   .grid {
     width: 95vw;
     height: 95vw;
@@ -46,5 +78,13 @@ h1 {
 
   h1 {
     font-size: 32px;
+  }
+
+  .grid-form__submit-button {
+    font-size: 10px;
+  }
+
+  .sketch-menu__list__mode__button {
+    font-size: 12px;
   }
 }
