@@ -16,5 +16,5 @@ function createGrid(n) {
   }
 }
 
-// Render the grid onto the document
+// Render the default grid onto the document
 createGrid(16);
