@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
 
+html, 
 body {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0;
+  padding: 20px;
   font-family: 'Walter Turncoat', cursive;
   text-align: center;
   background-color: #f1f1f1;
 }
 
-#grid-container {
+h1 {
+  font-size: 40px;
+}
+
+.grid {
   width: 80%;
+  max-width: 800px;
   margin: auto;
 }
 
-.grid-square {
+.grid__square {
   background-color: #ffffff;
   float: left;
   position: relative;
@@ -22,4 +28,23 @@ body {
   padding-bottom: 5%;
   margin: 0.5%;
   overflow: hidden;
+}
+
+.grid__square:hover {
+  background-color: rgb(65, 65, 65);
+}
+
+@media only screen and (max-width: 600px) {
+  html,
+  body {
+    padding: 0;
+  }
+
+  .grid {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
 }
