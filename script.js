@@ -7,8 +7,8 @@ const defaultBtn = document.querySelector(
 const randomBtn = document.querySelector(
   '.sketch-menu__list__mode__button--random'
 );
-const transBtn = document.querySelector(
-  '.sketch-menu__list__mode__button--transparent'
+const darkenBtn = document.querySelector(
+  '.sketch-menu__list__mode__button--darken'
 );
 const clearBtn = document.querySelector(
   '.sketch-menu__list__mode__button--clear-grid'
@@ -45,31 +45,43 @@ const changeGrid = (e) => {
 let currentColor = 'default';
 
 // Handle "brush" changes
-function changeColors() {
+function changeColors(e) {
   switch (currentColor) {
     case 'default':
-      return '#333333';
+      return '#808080';
     case 'random':
       return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    case 'darken':
+      let opacity = 0;
+      if (opacity >= 1) {
+        opacity = 1;
+      } else {
+        opacity += 0.1;
+      }
   }
 }
 
 // Handle "mouseover" events on the grid
 function etchTheSketch(e) {
-  let colorChange = changeColors();
+  let colorChange = changeColors(e);
   e.target.style.backgroundColor = colorChange;
 }
 
 // Reset the canvas FIXME
 const resetCanvas = () => {
   const gridSquares = document.querySelectorAll('.grid__square'); // Returns a NodeList
-  gridSquares.forEach(
-    (square) => (square.style.backgroundColor = 'var(--square-color)')
-  );
-}
+  gridSquares.forEach((square) => {
+    square.style.backgroundColor = 'var(--square-color)';
+    square.style.opacity = 1;
+  });
+};
 
 // Assign DOM event handlers
 gridForm.addEventListener('submit', changeGrid);
-defaultBtn.addEventListener('click', (e) => currentColor = 'default');
-randomBtn.addEventListener('click', (e) => currentColor = 'random');
+defaultBtn.addEventListener('click', (e) => (currentColor = 'default'));
+randomBtn.addEventListener('click', (e) => (currentColor = 'random'));
+darkenBtn.addEventListener('click', (e) => {
+  currentColor = 'darken';
+  gridSquares.forEach(square => square.style.backgroundColor = 'rgb(0, 0, 0, 0)');
+});
 clearBtn.addEventListener('click', resetCanvas);
