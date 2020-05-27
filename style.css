@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
 
-html, 
+:root {
+  --grid-n: 1;
+  --background-color: #f1f1f1;
+  --square-color: #ffffff;
+  --square-border-color: #dddddd;
+}
+
 body {
   box-sizing: border-box;
-  margin: 0 auto;
-  padding: 20px;
   font-family: 'Walter Turncoat', cursive;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: var(--background-color);
+  overflow: hidden;
 }
 
 h1 {
@@ -15,19 +20,17 @@ h1 {
 }
 
 .grid {
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
+  width: 36rem;
+  height: 36rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(var(--grid-n), 1fr) / repeat(var(--grid-n), 1fr);
 }
 
 .grid__square {
-  background-color: #ffffff;
-  float: left;
-  position: relative;
-  width: 5%;
-  padding-bottom: 5%;
-  margin: 0.5%;
-  overflow: hidden;
+  width: auto;
+  background-color: var(--square-color);
+  border: 1px solid var(--square-border-color);
 }
 
 .grid__square:hover {
@@ -35,13 +38,9 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-  html,
-  body {
-    padding: 0;
-  }
-
   .grid {
-    width: 95%;
+    width: 95vw;
+    height: 95vw;
   }
 
   h1 {
