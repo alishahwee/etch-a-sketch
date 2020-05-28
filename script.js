@@ -1,5 +1,5 @@
 /*
-* Import color shader/blender/converter (pSBC.js) from https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)#--update---2182019---version-40
+ Import color shader/blender/converter (pSBC.js) from https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)#--update---2182019---version-40
 */
 // Version 4.0
 const pSBC=(p,c0,c1,l)=>{
@@ -81,7 +81,7 @@ function changeColors(e) {
     case 'random':
       return '#' + Math.floor(Math.random() * 16777215).toString(16);
     case 'darken':
-      // TODO
+      return pSBC(-0.1, e.target.style.backgroundColor);
   }
 }
 
@@ -91,13 +91,10 @@ function etchTheSketch(e) {
   e.target.style.backgroundColor = colorChange;
 }
 
-// Reset the canvas FIXME
+// Reset the canvas 
 const resetCanvas = () => {
   const gridSquares = document.querySelectorAll('.grid__square'); // Returns a NodeList
-  gridSquares.forEach((square) => {
-    square.style.backgroundColor = 'var(--square-color)';
-    square.style.opacity = 1;
-  });
+  gridSquares.forEach((square) => (square.style.backgroundColor = 'var(--square-color)'));
 };
 
 // Assign DOM event handlers
