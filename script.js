@@ -48,16 +48,11 @@ let currentColor = 'default';
 function changeColors(e) {
   switch (currentColor) {
     case 'default':
-      return '#808080';
+      return '#c7c7c7';
     case 'random':
       return '#' + Math.floor(Math.random() * 16777215).toString(16);
     case 'darken':
-      let opacity = 0;
-      if (opacity >= 1) {
-        opacity = 1;
-      } else {
-        opacity += 0.1;
-      }
+      // TODO
   }
 }
 
@@ -80,8 +75,5 @@ const resetCanvas = () => {
 gridForm.addEventListener('submit', changeGrid);
 defaultBtn.addEventListener('click', (e) => (currentColor = 'default'));
 randomBtn.addEventListener('click', (e) => (currentColor = 'random'));
-darkenBtn.addEventListener('click', (e) => {
-  currentColor = 'darken';
-  gridSquares.forEach(square => square.style.backgroundColor = 'rgb(0, 0, 0, 0)');
-});
+darkenBtn.addEventListener('click', (e) => (currentColor = 'darken'));
 clearBtn.addEventListener('click', resetCanvas);
